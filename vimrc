@@ -78,6 +78,14 @@ set tm=500
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
+" Disable highlight
+map <silent> <leader><leader> :noh<cr>
+
+" Tab mappings
+map <leader>tn :tabnew<cr>
+map <leader>to :tabonly<cr>
+map <leader>tc :tabclose<cr>
+
 " ------------------------------------------
 " Indentation
 " ------------------------------------------
