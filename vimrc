@@ -23,6 +23,7 @@ Bundle 'gmarik/vundle'
 
 Bundle 'scrooloose/nerdtree'
 Bundle "myusuf3/numbers.vim"
+Bundle 'Lokaltog/vim-powerline'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'othree/html5.vim'
@@ -72,6 +73,10 @@ set noerrorbells
 set novisualbell
 set t_vb=
 set tm=500
+
+" Configure backspace so it acts as it should act
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
 
 " ------------------------------------------
 " Indentation
@@ -131,4 +136,7 @@ autocmd VimEnter * wincmd p
 
 " Numbers
 nnoremap <F3> :NumbersToggle<CR>
+
+" Powerline
+let g:Powerline_colorscheme = 'skwp'
 
