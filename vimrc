@@ -66,7 +66,6 @@ set hlsearch       " Highlight search results
 
 set cmdheight=2    " Make the command area two lines high
 set laststatus=2   " Always show the statusline
-set hid            " Buffer becomes hidden when abandoned
 
 " No annoying sound on errors
 set noerrorbells
