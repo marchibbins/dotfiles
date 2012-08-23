@@ -26,8 +26,7 @@ Bundle "myusuf3/numbers.vim"
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'nanotech/jellybeans.vim'
-Bundle 'othree/html5.vim'
-Bundle 'python.vim'
+Bundle 'groenewege/vim-less'
 
 " ------------------------------------------
 " General settings
