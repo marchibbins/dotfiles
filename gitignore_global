@@ -1,0 +1,25 @@
+# Vim
+.*.sw[a-z]
+
+# Python
+*.pyc
+*.pyo
+*.pot
+
+# Temp
+*.log
+*.lnk
+*.tmp
+
+# Data
+*.db
+*.sqlite
+
+# Node
+node_modules
+
+# OS X
+.DS_Store
+.Spotlight-V100
+.Trashes
+Thumbs.db
