@@ -5,10 +5,10 @@
     editor = /usr/bin/vim
     excludesfile = ~/.gitignore_global
 [alias]
-	co = checkout
-	cm = commit -m
-	cam = commit -am
-	s = status
-	ss = status -s
-	df = diff
+    co = checkout
+    cm = commit -m
+    cam = commit -am
+    s = status
+    ss = status -s
+    df = diff
     lg = log
