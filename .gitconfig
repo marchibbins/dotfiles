@@ -5,14 +5,14 @@
     editor = /usr/bin/vim
     excludesfile = ~/.gitignore_global
 [color]
-    ui = true
+    ui = auto
 [color "branch"]
-    current = yellow reverse
+    current = yellow bold
     local = yellow
     remote = green
 [color "diff"]
-    meta = yellow bold
-    frag = magenta bold
+    meta = cyan
+    frag = yellow
     old = red bold
     new = green bold
 [color "status"]
