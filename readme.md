@@ -8,16 +8,22 @@ The install script will symlink files to your home directory, requesting permiss
 
 Clone to somewhere sensible:
 
-``` git clone https://github.com/marchibbins/dotfiles.git ~/.dotfiles```
+```
+git clone https://github.com/marchibbins/dotfiles.git ~/.dotfiles
+```
 
 Likely make the install script executable
 
-```chmod +x install.sh```
+```
+chmod +x install.sh
+```
 
 Install what you want:
 
-```./install.sh```
-
+```
+./install.sh
+```
+	
 Never be without your dotfiles, [fork away!](https://github.com/marchibbins/dotfiles/fork) Contribute your own: http://dotfiles.github.com/.
 
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-sa/3.0)
