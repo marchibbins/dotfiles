@@ -26,4 +26,5 @@
     s = status
     ss = status -s
     df = diff
+    br = branch
     lg = log
