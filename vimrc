@@ -40,7 +40,7 @@ filetype plugin on
 filetype indent on
 
 " Set leader (must come before any <leader> mappings)
-let mapleader = "\\"
+let mapleader = ","
 
 " Set to auto read when a file is changed from the outside
 set autoread
