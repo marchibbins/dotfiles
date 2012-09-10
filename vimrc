@@ -1,26 +1,20 @@
-" ==========================================
-" Vimrc: Marc Hibbins (@marchibbins)
-" Version: 1.0
-" Mostly from: http://amix.dk/vim/vimrc.html
-" ==========================================
 
-" ------------------------------------------
-" Vundle
-" ------------------------------------------
+"" Vimrc: Marc Hibbins (@marchibbins)
 
 set nocompatible " be iMproved
 filetype off     " required!
 
+" ------------------------------------------
+" Vundle plug-in management
+" ------------------------------------------
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-" let Vundle manage Vundle, required
+" Let Vundle manage Vundle, required
 Bundle 'gmarik/vundle'
 
-" ------------------------------------------
-" Plugin Bundles
-" ------------------------------------------
-
+" Plugins
 Bundle 'scrooloose/nerdtree'
 Bundle "myusuf3/numbers.vim"
 Bundle 'Lokaltog/vim-powerline'
@@ -45,8 +39,9 @@ let mapleader = ","
 " Set to auto read when a file is changed from the outside
 set autoread
 
-" Fast saving
+" Fast saving and quitting
 nmap <leader>w :w!<cr>
+nmap <leader>q :q<cr>
 
 " ------------------------------------------
 " User interface
