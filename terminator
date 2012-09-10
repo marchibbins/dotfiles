@@ -1,3 +1,6 @@
+
+## Terminator config: Marc Hibbins (@marchibbins)
+
 [global_config]
   window_state = fullscreen
   scrollbar_position = "disabled"
