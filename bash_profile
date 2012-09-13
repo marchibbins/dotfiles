@@ -1,4 +1,3 @@
-
 ## Bash profile: Marc Hibbins (@marchibbins)
 
 # Let's stick with .bashrc

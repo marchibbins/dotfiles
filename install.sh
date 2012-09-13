@@ -1,6 +1,7 @@
 #!/bin/bash
+## Dotfiles install script: Marc Hibbins (@marchibbins)
 
-# Installer script to symlink dotfiles, similar to:
+# Symlink dotfiles in home directory, similar to:
 # https://github.com/holman/dotfiles
 # https://github.com/jferris/config_files
 
