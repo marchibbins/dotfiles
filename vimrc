@@ -1,4 +1,3 @@
-
 "" Vimrc: Marc Hibbins (@marchibbins)
 
 set nocompatible " be iMproved
@@ -16,18 +15,17 @@ Bundle 'gmarik/vundle'
 
 " Plugins
 Bundle 'scrooloose/nerdtree'
+Bundle 'kien/ctrlp.vim'
 Bundle "myusuf3/numbers.vim"
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'altercation/vim-colors-solarized'
+Bundle 'Lokaltog/vim-easymotion'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'groenewege/vim-less'
+Bundle 'tComment'
 
 " ------------------------------------------
 " General settings
 " ------------------------------------------
-
-" Sets how many lines of history VIM has to remember
-set history=700
 
 " Enable filetype plugins (must turn on after Vundle)
 filetype plugin on
@@ -35,6 +33,9 @@ filetype indent on
 
 " Set leader (must come before any <leader> mappings)
 let mapleader = ","
+
+" Sets how many lines of history VIM has to remember
+set history=700
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -49,12 +50,12 @@ nmap <leader>q :q<cr>
 
 " Wild menu
 set wildmenu
-set wildignore=*~,*.o,*.pyc
+set wildignore+=*~,*.o,*.so,*.swo,*.swp,*.pyc,*/logs/*,*/tmp/*,*.zip
 
-set ruler          " Ruler on
-set nu             " Line numbers on
-set showmatch      " Show matching brackets
-set ignorecase     " Ignore case when searching
+set ruler
+set number
+set showmatch
+set ignorecase
 set smartcase      " When searching try to be smart about cases
 set hlsearch       " Highlight search results
 
@@ -72,19 +73,41 @@ set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
 " Disable highlight
-map <silent> <leader><leader> :noh<cr>
+map <silent> <leader>. :noh<cr>
 
 " Tab mappings
 map <leader>tn :tabnew<cr>
+map <leader>te :tabedit<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
+
+" ------------------------------------------
+" Movement, nabbed from @krak3n
+" ------------------------------------------
+
+" Easier way to move windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+" Arrow keys do nothing, EVIL arrows
+noremap  <Up> ""
+noremap! <Up> <Esc>
+noremap  <Down> ""
+noremap! <Down> <Esc>
+noremap  <Left> ""
+noremap! <Left> <Esc>
+noremap  <Right> ""
+noremap! <Right> <Esc>
 
 " ------------------------------------------
 " Indentation
 " ------------------------------------------
 
-set ai             " Auto indent
-set si             " Smart indent
+set autoindent
+set smartindent
+
 set wrap           " Wrap lines
 set expandtab      " Use spaces instead of tabs
 set smarttab       " Be smart when using tabs
@@ -94,8 +117,8 @@ set shiftwidth=4
 set tabstop=4
 
 " Linebreak on 500 characters
-set lbr
-set tw=500
+set linebreak
+set textwidth=500
 
 " ------------------------------------------
 " Colours
@@ -115,10 +138,6 @@ endif
 " Bundle settings
 " ------------------------------------------
 
-" Solarized
-" set background=dark
-" colorscheme solarized
-
 " Jellybeans
 colorscheme jellybeans
 
@@ -128,7 +147,7 @@ nnoremap <leader>nt :NERDTreeToggle<CR>
 nnoremap <leader>nf :NERDTreeFind<CR>
 
 let NERDTreeChDirMode=2
-let NERDTreeIgnore=['\~$', '\.o', '\.pyc', '\.swo$', '\.swp$', '\.git', '\.svn']
+let NERDTreeIgnore=['\~$', '\.o', '\.so', '\.swo$', '\.swp$', '\.pyc', '\.git', '\.svn', '\.zip']
 let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1
 
@@ -141,3 +160,5 @@ nnoremap <F3> :NumbersToggle<CR>
 " Powerline
 let g:Powerline_colorscheme = 'skwp'
 
+" CtrlP
+nmap <leader>p :CtrlP .<cr>
