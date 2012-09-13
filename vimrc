@@ -20,6 +20,8 @@ Bundle "myusuf3/numbers.vim"
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'nanotech/jellybeans.vim'
+Bundle 'skammer/vim-css-color'
+Bundle 'hail2u/vim-css3-syntax'
 Bundle 'groenewege/vim-less'
 Bundle 'tComment'
 
@@ -142,9 +144,9 @@ endif
 colorscheme jellybeans
 
 " NERDTree
-nnoremap <F2> :NERDTreeToggle<CR>
-nnoremap <leader>nt :NERDTreeToggle<CR>
-nnoremap <leader>nf :NERDTreeFind<CR>
+nnoremap <F2> :NERDTreeToggle<cr>
+nnoremap <leader>nt :NERDTreeToggle<cr>
+nnoremap <leader>nf :NERDTreeFind<cr>
 
 let NERDTreeChDirMode=2
 let NERDTreeIgnore=['\~$', '\.o', '\.so', '\.swo$', '\.swp$', '\.pyc', '\.git', '\.svn', '\.zip']
@@ -155,7 +157,7 @@ autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 
 " Numbers
-nnoremap <F3> :NumbersToggle<CR>
+nnoremap <F3> :NumbersToggle<cr>
 
 " Powerline
 let g:Powerline_colorscheme = 'skwp'
