@@ -120,3 +120,8 @@ fi
 if [ -x ~/.nvm/nvm.sh ]; then
     source ~/.nvm/nvm.sh
 fi
+
+# Google App Engine
+if [ -d /usr/local/bin/google_appengine ]; then
+    export PATH=$PATH:/usr/local/bin/google_appengine/
+fi
