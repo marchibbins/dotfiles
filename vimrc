@@ -24,6 +24,7 @@ Bundle 'skammer/vim-css-color'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'groenewege/vim-less'
 Bundle 'tComment'
+Bundle 'pep8'
 
 " ------------------------------------------
 " General settings
