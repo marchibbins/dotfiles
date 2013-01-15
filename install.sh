@@ -11,6 +11,7 @@ for name in *; do
     target="$HOME/.$name"
     overwrite=0
     backup=0
+    skip=0
 
     if [[ "$ignore_files" == *"$name"* ]]; then
         continue
@@ -29,7 +30,7 @@ for name in *; do
             o) overwrite=1;;
             b) backup=1;;
             s) echo "- File skipped"
-               continue;;
+               skip=1;;
             *) echo "Command not recognised, file skipped"
                continue;;
         esac
