@@ -31,3 +31,4 @@
     br = branch
     lg = log
     hardreset = reset --hard HEAD
+    undo = reset --soft HEAD^
