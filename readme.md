@@ -2,6 +2,10 @@
 
 As you'd expect, plus a few extras.
 
+### Dependencies
+
+- [Vundle](https://github.com/gmarik/vundle)
+
 ### Installation
 
 The install script will symlink files to your home directory, requesting permission for each file individually rather than dumping the lot. It'll also prompt before overwriting anything, with an option to backup any existing files.
