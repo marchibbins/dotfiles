@@ -161,7 +161,8 @@ autocmd VimEnter * wincmd p
 nnoremap <F3> :NumbersToggle<cr>
 
 " Powerline
-let g:Powerline_colorscheme = 'skwp'
+let g:Powerline_theme = 'solarized256'
+let g:Powerline_colorscheme = 'solarized256'
 
 " CtrlP
 nmap <leader>p :CtrlP .<cr>
