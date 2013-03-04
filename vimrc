@@ -47,6 +47,9 @@ set autoread
 nmap <leader>w :w!<cr>
 nmap <leader>q :q<cr>
 
+" Reload vimrc after writing
+autocmd! BufWritePost .vimrc source ~/.vimrc
+
 " ------------------------------------------
 " User interface
 " ------------------------------------------
