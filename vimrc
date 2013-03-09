@@ -88,7 +88,7 @@ map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 
 " ------------------------------------------
-" Movement, nabbed from @krak3n
+" Movement, bits nabbed from @krak3n
 " ------------------------------------------
 
 " Easier way to move windows
@@ -106,6 +106,14 @@ noremap  <Left> ""
 noremap! <Left> <Esc>
 noremap  <Right> ""
 noremap! <Right> <Esc>
+
+" Move lines
+nnoremap <S-j> :m .+1<cr>==
+nnoremap <S-k> :m .-2<cr>==
+inoremap <S-j> <Esc>:m .+1<cr>==gi
+inoremap <S-k> <Esc>:m .-2<cr>==gi
+vnoremap <S-j> :m '>+1<cr>gv=gv
+vnoremap <S-k> :m '<-2<cr>gv=gv
 
 " ------------------------------------------
 " Indentation
