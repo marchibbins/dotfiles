@@ -5,6 +5,8 @@
   scrollbar_position = "disabled"
 [keybindings]
   full_screen = F11
+  zoom_in = <Ctrl><Alt>plus
+  zoom_out = <Ctrl><Alt>minus
 [profiles]
   [[default]]
     palette = "#073642:#d30102:#859900:#b58900:#6c71c4:#d33682:#2aa198:#839496:#586e75:#cb4b16:#859900:#b58900:#268bd2:#d33682:#2aa198:#93a1a1"
