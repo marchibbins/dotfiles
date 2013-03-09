@@ -104,8 +104,12 @@ parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
 }
 
+parse_git_status() {
+    git status 2> /dev/null | sed -nr '/modified|deleted|untracked/p' | sed -n '$=' | sed -e 's/[0-9]/* /'
+}
+
 export VIRTUAL_ENV_DISABLE_PROMPT=1
-export PS1="\n\$(parse_virtualenv)\$(parse_git_branch)\h \e[0;32m\w\e[m\n\$ "
+export PS1="\n\$(parse_virtualenv)\e[0;33m\$(parse_git_branch)\$(parse_git_status)\e[m\h \e[0;32m\w\e[m\n\$ "
 
 # ------------------------------------------
 # Environment
