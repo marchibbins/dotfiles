@@ -30,6 +30,6 @@
     df = diff
     br = branch
     lg = log
-    lgs = log --oneline
+    ls = log --oneline
     hardreset = reset --hard HEAD
     undo = reset --soft HEAD^

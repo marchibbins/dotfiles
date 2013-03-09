@@ -74,6 +74,7 @@ alias gss='git status -s'
 alias gd='git diff'
 alias gb='git branch'
 alias gl='git log'
+alias gls='git log --oneline'
 
 # Python
 alias pym='python manage.py'
