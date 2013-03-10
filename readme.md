@@ -28,7 +28,7 @@ Install what you want:
 ./install.sh
 ```
 	
-Never be without your dotfiles, [fork away!](https://github.com/marchibbins/dotfiles/fork) Contribute your own: http://dotfiles.github.com/.
+Never be without your dotfiles, [fork away!](https://github.com/marchibbins/dotfiles/fork_select) Contribute your own: http://dotfiles.github.com/.
 
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-sa/3.0)
 
