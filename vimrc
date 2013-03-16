@@ -108,12 +108,12 @@ noremap  <Right> ""
 noremap! <Right> <Esc>
 
 " Move lines
-nnoremap <S-j> :m .+1<cr>==
-nnoremap <S-k> :m .-2<cr>==
-inoremap <S-j> <Esc>:m .+1<cr>==gi
-inoremap <S-k> <Esc>:m .-2<cr>==gi
-vnoremap <S-j> :m '>+1<cr>gv=gv
-vnoremap <S-k> :m '<-2<cr>gv=gv
+nnoremap <C-S-j> :m .+1<cr>==
+nnoremap <C-S-k> :m .-2<cr>==
+inoremap <C-S-j> <Esc>:m .+1<cr>==gi
+inoremap <C-S-k> <Esc>:m .-2<cr>==gi
+vnoremap <C-S-j> :m '>+1<cr>gv=gv
+vnoremap <C-S-k> :m '<-2<cr>gv=gv
 
 " ------------------------------------------
 " Indentation
