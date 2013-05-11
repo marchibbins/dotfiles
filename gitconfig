@@ -30,6 +30,6 @@
     df = diff
     br = branch
     lg = log
-    ls = log --oneline
+    ls = log --pretty=format:"%C(yellow)%h%x09%C(reset)%ar%x09%C(green)%an%x09%C(reset)%s"
     hardreset = reset --hard HEAD
     undo = reset --soft HEAD^
