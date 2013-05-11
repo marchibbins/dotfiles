@@ -87,6 +87,9 @@ map <leader>te :tabedit<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 
+" Yank to end of line
+noremap Y y$
+
 " ------------------------------------------
 " Movement, bits nabbed from @krak3n
 " ------------------------------------------
