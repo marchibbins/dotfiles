@@ -107,13 +107,13 @@ noremap! <Left> <Esc>
 noremap  <Right> ""
 noremap! <Right> <Esc>
 
-" Move lines
-nnoremap <C-S-j> :m .+1<cr>==
-nnoremap <C-S-k> :m .-2<cr>==
-inoremap <C-S-j> <Esc>:m .+1<cr>==gi
-inoremap <C-S-k> <Esc>:m .-2<cr>==gi
-vnoremap <C-S-j> :m '>+1<cr>gv=gv
-vnoremap <C-S-k> :m '<-2<cr>gv=gv
+" Move lines, want Ctrl+Shift but only arrow keys left :(
+nnoremap <C-Down> :m .+1<cr>==
+nnoremap <C-Up> :m .-2<cr>==
+inoremap <C-Down> <Esc>:m .+1<cr>==gi
+inoremap <C-Up> <Esc>:m .-2<cr>==gi
+vnoremap <C-Down> :m '>+1<cr>gv=gv
+vnoremap <C-Up> :m '<-2<cr>gv=gv
 
 " ------------------------------------------
 " Indentation
