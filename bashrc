@@ -130,3 +130,6 @@ fi
 if [ -d /usr/local/bin/google_appengine ]; then
     export PATH=$PATH:/usr/local/bin/google_appengine/
 fi
+
+# Karma Chrome
+export CHROME_BIN="/usr/bin/chromium-browser"
