@@ -133,3 +133,6 @@ fi
 
 # Karma Chrome
 export CHROME_BIN="/usr/bin/chromium-browser"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:/usr/local/heroku/bin # Add Heroku client to path
