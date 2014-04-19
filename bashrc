@@ -75,6 +75,7 @@ alias gd='git diff'
 alias gb='git branch'
 alias gl='git log'
 alias gls='git ls'
+alias glast='git last'
 
 # Python
 alias pym='python manage.py'
