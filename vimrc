@@ -1,30 +1,41 @@
 "" Vimrc: Marc Hibbins (@marchibbins)
 
-set nocompatible " be iMproved
-filetype off     " required!
+set nocompatible " Be iMproved
 
 " ------------------------------------------
-" Vundle plug-in management
+" NeoBundle
 " ------------------------------------------
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+if has('vim_starting')
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
 
-" Let Vundle manage Vundle, required
-Bundle 'gmarik/vundle'
+call neobundle#begin(expand('~/.vim/bundle/'))
 
-" Plugins
-Bundle 'scrooloose/nerdtree'
-Bundle 'kien/ctrlp.vim'
-Bundle "myusuf3/numbers.vim"
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'nanotech/jellybeans.vim'
-Bundle 'skammer/vim-css-color'
-Bundle 'hail2u/vim-css3-syntax'
-Bundle 'groenewege/vim-less'
-Bundle 'tComment'
-Bundle 'pep8'
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" Asynchronous processes in vim
+NeoBundle 'Shougo/vimproc', { 'build': {
+        \ 'windows': 'make -f make_mingw32.mak',
+        \ 'cygwin': 'make -f make_cygwin.mak',
+        \ 'mac': 'make -f make_mac.mak',
+        \ 'unix': 'make -f make_unix.mak',
+        \ } }
+
+" http://editorconfig.org/
+NeoBundle 'editorconfig/editorconfig-vim'
+
+" Theme
+NeoBundle 'nanotech/jellybeans.vim'
+
+call neobundle#end()
+
+" Required:
+filetype plugin indent on
+
+" Check for uninstalled bundles
+NeoBundleCheck
 
 " ------------------------------------------
 " General settings
@@ -144,6 +155,10 @@ set textwidth=500
 " Syntax highlighting
 syntax enable
 
+" Theme
+set background=dark
+colorscheme jellybeans
+
 set encoding=utf-8
 set t_Co=256
 
@@ -151,32 +166,3 @@ if exists('+colorcolumn')
     set colorcolumn=80 " Color the 80th column differently
 endif
 
-" ------------------------------------------
-" Bundle settings
-" ------------------------------------------
-
-" Jellybeans
-colorscheme jellybeans
-
-" NERDTree
-nnoremap <F2> :NERDTreeToggle<cr>
-nnoremap <leader>nt :NERDTreeToggle<cr>
-nnoremap <leader>nf :NERDTreeFind<cr>
-
-let NERDTreeChDirMode=2
-let NERDTreeIgnore=['\~$', '\.o', '\.so', '\.swo$', '\.swp$', '\.pyc', '\.git', '\.svn', '\.zip']
-let NERDTreeShowBookmarks=1
-let NERDTreeShowHidden=1
-
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
-
-" Numbers
-nnoremap <F3> :NumbersToggle<cr>
-
-" Powerline
-let g:Powerline_theme = 'solarized256'
-let g:Powerline_colorscheme = 'solarized256'
-
-" CtrlP
-nmap <leader>p :CtrlP .<cr>
