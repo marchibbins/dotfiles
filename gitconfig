@@ -24,7 +24,6 @@
 [alias]
     co = checkout
     cm = commit -m
-    cam = commit -am
     s = status
     ss = status -s
     df = diff
