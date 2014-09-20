@@ -4,6 +4,7 @@
     name = Marc Hibbins
     email = marchibbins@gmail.com
 [core]
+    autocrlf = input
     editor = /usr/bin/vim
     excludesfile = ~/.gitignore
 [color]
