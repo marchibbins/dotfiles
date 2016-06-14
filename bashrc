@@ -62,6 +62,7 @@ fi
 alias l='ls -CF'
 alias la='ls -AF'
 alias ll='ls -AlF'
+alias lt='ls -AlFt'
 
 # grep
 alias grep='grep --color=auto'
@@ -105,12 +106,8 @@ parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
 }
 
-parse_git_status() {
-    git status 2> /dev/null | sed -nr '/modified|deleted|untracked/p' | sed -n '$=' | sed -e 's/[0-9]/* /'
-}
-
 export VIRTUAL_ENV_DISABLE_PROMPT=1
-export PS1="\n\$(parse_virtualenv)\e[0;33m\$(parse_git_branch)\$(parse_git_status)\e[m\h \e[0;32m\w\e[m\n\$ "
+export PS1="\n\$(parse_virtualenv)\e[0;33m\$(parse_git_branch)\e[m\h \e[0;32m\w\e[m\n\$ "
 
 # ------------------------------------------
 # Environment
@@ -119,12 +116,8 @@ export PS1="\n\$(parse_virtualenv)\e[0;33m\$(parse_git_branch)\$(parse_git_statu
 # Virtualenvwrapper
 if [ -x /usr/local/bin/virtualenvwrapper.sh ]; then
     export WORKON_HOME=$HOME/.virtualenvs
+    export PROJECT_HOME=$HOME/Projects
     source /usr/local/bin/virtualenvwrapper.sh
-fi
-
-# Node.js
-if [ -x ~/.nvm/nvm.sh ]; then
-    source ~/.nvm/nvm.sh
 fi
 
 # Google App Engine
@@ -132,8 +125,10 @@ if [ -d /usr/local/bin/google_appengine ]; then
     export PATH=$PATH:/usr/local/bin/google_appengine/
 fi
 
-# Karma Chrome
-export CHROME_BIN="/usr/bin/chromium-browser"
+# NVM
+if [ -x ~/.nvm/nvm.sh ]; then
+    source ~/.nvm/nvm.sh
+fi
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-PATH=$PATH:/usr/local/heroku/bin # Add Heroku client to path
+# Heroku
+export PATH="/usr/local/heroku/bin:$PATH"
