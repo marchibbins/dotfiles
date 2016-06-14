@@ -1,38 +1,13 @@
 "" Vimrc: Marc Hibbins (@marchibbins)
 
 set nocompatible " be iMproved
-filetype off     " required!
-
-" ------------------------------------------
-" Vundle plug-in management
-" ------------------------------------------
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" Let Vundle manage Vundle, required
-Bundle 'gmarik/vundle'
-
-" Plugins
-Bundle 'scrooloose/nerdtree'
-Bundle 'kien/ctrlp.vim'
-Bundle "myusuf3/numbers.vim"
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'nanotech/jellybeans.vim'
-Bundle 'skammer/vim-css-color'
-Bundle 'hail2u/vim-css3-syntax'
-Bundle 'groenewege/vim-less'
-Bundle 'tComment'
-Bundle 'pep8'
 
 " ------------------------------------------
 " General settings
 " ------------------------------------------
 
-" Enable filetype plugins (must turn on after Vundle)
-filetype plugin on
-filetype indent on
+" Enable filetype plugins
+filetype plugin indent on
 
 " Set leader (must come before any <leader> mappings)
 let mapleader = ","
@@ -150,33 +125,3 @@ set t_Co=256
 if exists('+colorcolumn')
     set colorcolumn=80 " Color the 80th column differently
 endif
-
-" ------------------------------------------
-" Bundle settings
-" ------------------------------------------
-
-" Jellybeans
-colorscheme jellybeans
-
-" NERDTree
-nnoremap <F2> :NERDTreeToggle<cr>
-nnoremap <leader>nt :NERDTreeToggle<cr>
-nnoremap <leader>nf :NERDTreeFind<cr>
-
-let NERDTreeChDirMode=2
-let NERDTreeIgnore=['\~$', '\.o', '\.so', '\.swo$', '\.swp$', '\.pyc', '\.git', '\.svn', '\.zip']
-let NERDTreeShowBookmarks=1
-let NERDTreeShowHidden=1
-
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
-
-" Numbers
-nnoremap <F3> :NumbersToggle<cr>
-
-" Powerline
-let g:Powerline_theme = 'solarized256'
-let g:Powerline_colorscheme = 'solarized256'
-
-" CtrlP
-nmap <leader>p :CtrlP .<cr>
