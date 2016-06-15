@@ -1,127 +1,287 @@
-"" Vimrc: Marc Hibbins (@marchibbins)
+" Vimrc: Marc Hibbins (@marchibbins)
 
 set nocompatible " be iMproved
 
-" ------------------------------------------
-" General settings
-" ------------------------------------------
+"===============================================================================
 
 " Enable filetype plugins
 filetype plugin indent on
 
-" Set leader (must come before any <leader> mappings)
-let mapleader = ","
+" Reload vimrc after writing
+autocmd! BufWritePost .vimrc source ~/.vimrc
 
-" Sets how many lines of history VIM has to remember
-set history=700
+"===============================================================================
+" General settings
+"===============================================================================
+
+syntax on
+
+try
+  lang en_gb
+catch
+endtry
+
+" Explicitly set encoding to utf-8
+set encoding=utf-8
+
+" 256bit terminal
+set t_Co=256
+
+" Turn on line number
+set number
+
+" Turn on ruler
+set ruler
+
+" Always splits to the right and below
+set splitright
+set splitbelow
+
+" Give one virtual space at end of line
+set virtualedit=onemore
+
+" Sets how many lines of history vim has to remember
+set history=10000
 
 " Set to auto read when a file is changed from the outside
 set autoread
+
+" Minimal number of screen lines to keep above and below the cursor
+set scrolloff=10
+
+" How many lines to scroll at a time, make scrolling appears faster
+set scrolljump=3
+
+" Min width of the number column to the left
+set numberwidth=4
+
+" Open all folds initially
+set foldmethod=indent
+set foldlevelstart=99
+
+" No need to show mode
+set noshowmode
+
+" Auto complete setting
+set completeopt=longest,menuone
+
+" Wild menu
+set wildmode=list:longest,full
+set wildmenu "turn on wild menu
+set wildignore=*~,*.o,*.obj,.git
+set wildignore+=*.so,*.swo,*.swp,*.pyc,__pycache__
+set wildignore+=*.db,*.sqlite,*/logs/*,*/tmp/*,*.zip
+
+" Set backspace config
+set backspace=eol,start,indent
+
+" Highlight search results
+set hlsearch
+
+" Case insensitive search
+set ignorecase
+set smartcase
+
+" Set sensible heights for splits
+set winheight=50
+
+" Make search act like search in modern browsers
+set incsearch
+
+" Show matching brackets
+set showmatch
+
+" Show incomplete commands
+set showcmd
+
+" Turn off sound
+set vb
+set t_vb=
+
+" Always show the statusline
+set laststatus=2
+
+" Make the command area two lines high
+set cmdheight=2
+
+" Column width indicator
+set colorcolumn=80
+
+" Tab settings
+set expandtab
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set smarttab
+
+" Text display settings
+set linebreak
+set textwidth=120
+set autoindent
+set nowrap
+set whichwrap+=h,l,<,>,[,]
+
+" Kill arrows
+noremap  <up> ""
+noremap! <up> <esc>
+noremap  <down> ""
+noremap! <down> <esc>
+noremap  <left> ""
+noremap! <left> <esc>
+noremap  <right> ""
+noremap! <right> <esc>
+
+"==============================================================================
+" Leader mappings
+"==============================================================================
+
+" Map leader and localleader key to comma
+let mapleader = ","
+let g:mapleader = ","
 
 " Fast saving and quitting
 nmap <leader>w :w!<cr>
 nmap <leader>q :q<cr>
 
-" Reload vimrc after writing
-autocmd! BufWritePost .vimrc source ~/.vimrc
+" Tab mappings
+nmap <leader>tn :tabnew<cr>
+nmap <leader>te :tabedit<cr>
+nmap <leader>to :tabonly<cr>
+nmap <leader>tc :tabclose<cr>
 
-" ------------------------------------------
-" User interface
-" ------------------------------------------
+" Quick vimrc editing
+nnoremap <leader>e :e! ~/.vimrc<cr>
 
-" Wild menu
-set wildmenu
-set wildignore+=*~,*.o,*.so,*.swo,*.swp,*.pyc,*/logs/*,*/tmp/*,*.zip
-
-set ruler
-set number
-set showmatch
-set ignorecase
-set smartcase      " When searching try to be smart about cases
-set hlsearch       " Highlight search results
-
-set cmdheight=2    " Make the command area two lines high
-set laststatus=2   " Always show the statusline
-
-" No annoying sound on errors
-set noerrorbells
-set novisualbell
-set t_vb=
-set tm=500
-
-" Configure backspace so it acts as it should act
-set backspace=eol,start,indent
-set whichwrap+=<,>,h,l
+" <leader>f: Autoformat
+nnoremap <silent> <leader>f :Autoformat<cr>
 
 " Disable highlight
-map <silent> <leader>. :noh<cr>
+nmap <silent> <leader>. :noh<cr>
 
-" Tab mappings
-map <leader>tn :tabnew<cr>
-map <leader>te :tabedit<cr>
-map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
+"===============================================================================
+" Command-line key mappings
+"===============================================================================
 
-" Yank to end of line
-noremap Y y$
+cnoremap <c-j> <down>
+cnoremap <c-k> <up>
 
-" ------------------------------------------
-" Movement, bits nabbed from @krak3n
-" ------------------------------------------
+" Ctrl-[hl]: Move left/right by word
+cnoremap <c-h> <s-left>
+cnoremap <c-l> <s-right>
 
-" Easier way to move windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+" Ctrl-[ae]: Bash like start/eol
+cnoremap <c-a> <home>
+cnoremap <c-e> <end>
 
-" Arrow keys do nothing, EVIL arrows
-noremap  <Up> ""
-noremap! <Up> <Esc>
-noremap  <Down> ""
-noremap! <Down> <Esc>
-noremap  <Left> ""
-noremap! <Left> <Esc>
-noremap  <Right> ""
-noremap! <Right> <Esc>
+" w!!: Writes using sudo
+cnoremap w!! w !sudo tee % >/dev/null
 
-" Move lines, want Ctrl+Shift but only arrow keys left :(
-nnoremap <C-Down> :m .+1<cr>==
-nnoremap <C-Up> :m .-2<cr>==
-inoremap <C-Down> <Esc>:m .+1<cr>==gi
-inoremap <C-Up> <Esc>:m .-2<cr>==gi
-vnoremap <C-Down> :m '>+1<cr>gv=gv
-vnoremap <C-Up> :m '<-2<cr>gv=gv
+"===============================================================================
+" Normal mode key mappings
+"===============================================================================
 
-" ------------------------------------------
-" Indentation
-" ------------------------------------------
+" d: Delete into the blackhole
+nnoremap d "_d
 
-set autoindent
-set smartindent
+" c: Change into the blackhole
+nnoremap c "_c
 
-set wrap           " Wrap lines
-set expandtab      " Use spaces instead of tabs
-set smarttab       " Be smart when using tabs
+"===============================================================================
+"" Visual node key mappings
+"===============================================================================
 
-" Tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
+" d: Delete into the blackhole
+xnoremap d "_d
 
-" Linebreak on 500 characters
-set linebreak
-set textwidth=500
+" [<>]: Reselect visual block after indent
+xnoremap < <gv
+xnoremap > >gv
 
-" ------------------------------------------
-" Colours
-" ------------------------------------------
+" .: repeats the last command on every line
+xnoremap . :normal.<cr>
 
-" Syntax highlighting
-syntax enable
+"===============================================================================
+" Normal mode Shift key mappings
+"===============================================================================
 
-set encoding=utf-8
-set t_Co=256
+" Q: Closes the window
+nnoremap Q :q<cr>
 
-if exists('+colorcolumn')
-    set colorcolumn=80 " Color the 80th column differently
+" Y: Yank to end of line
+nnoremap Y y$
+
+" H: Go to beginning of line
+noremap H ^
+
+" L: Go to end of line
+noremap L g_
+
+" +/-: Increment number
+nnoremap + <c-a>
+nnoremap - <c-x>
+
+" _: Quick horizontal split
+nnoremap _ :sp<cr>
+
+" |: Quick vertical split
+nnoremap <bar> :vsp<cr>
+
+"===============================================================================
+" Normal mode Ctrl key mappings
+"===============================================================================
+
+" Ctrl-[hjkl]: Window movement
+nmap <c-j> <c-w>j
+nmap <c-k> <c-w>k
+nmap <c-h> <c-w>h
+nmap <c-l> <c-w>l
+
+"===============================================================================
+" Insert mode Ctrl key mappings
+"===============================================================================
+
+" Ctrl-u: Delete til beginning of line, create undo point
+inoremap <c-u> <c-g>u<c-u>
+
+" Ctrl-k: Delete til end of line, create undo point
+inoremap <c-k> <c-g>u<c-o>D
+
+"===============================================================================
+" Normal mode Alt Key Mappings
+"===============================================================================
+
+" Alt-[hjkl]: Move lines
+nnoremap <a-j> :m .+1<cr>==
+nnoremap <a-k> :m .-2<cr>==
+
+"===============================================================================
+" Insert mode Alt Key Mappings
+"===============================================================================
+
+inoremap <a-j> <esc>:m .+1<cr>==gi
+inoremap <a-k> <esc>:m .-2<cr>==gi
+
+"===============================================================================
+" Visual mode Alt Key Mappings
+"===============================================================================
+
+vnoremap <a-j> :m '>+1<cr>gv=gv
+vnoremap <a-k> :m '<-2<cr>gv=gv
+
+"===============================================================================
+" Spelling
+"===============================================================================
+
+if !has("gui_running")
+    hi clear SpellBad
+    hi SpellBad cterm=underline ctermfg=red
+    hi clear SpellCap
+    hi SpellCap cterm=underline ctermfg=blue
+    hi clear SpellLocal
+    hi SpellLocal cterm=underline ctermfg=blue
+    hi clear SpellRare
+    hi SpellRare cterm=underline ctermfg=blue
 endif
+
+" Toggle spell checking
+nnoremap <F5> :setlocal spell! spelllang=en_gb<cr>
