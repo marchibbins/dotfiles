@@ -17,6 +17,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'easymotion/vim-easymotion'
+Plug 'rhysd/clever-f.vim'
 
 call plug#end()
 
