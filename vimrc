@@ -3,23 +3,32 @@
 set nocompatible " be iMproved
 
 "===============================================================================
+" Plugins
+"===============================================================================
+
+call plug#begin()
+
+" IDE features
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+
+call plug#end()
 
 " Enable filetype plugins
 filetype plugin indent on
 
-" Reload vimrc after writing
-autocmd! BufWritePost .vimrc source ~/.vimrc
+syntax on
 
 "===============================================================================
 " General settings
 "===============================================================================
 
-syntax on
-
 try
   lang en_gb
 catch
 endtry
+
+" Reload vimrc after writing
+autocmd! BufWritePost .vimrc source ~/.vimrc
 
 " Explicitly set encoding to utf-8
 set encoding=utf-8
@@ -136,8 +145,8 @@ noremap! <right> <esc>
 "==============================================================================
 
 " Map leader and localleader key to comma
-let mapleader = ","
-let g:mapleader = ","
+let mapleader=","
+let g:mapleader=","
 
 " Fast saving and quitting
 nmap <leader>w :w!<cr>
@@ -267,6 +276,19 @@ inoremap <a-k> <esc>:m .-2<cr>==gi
 
 vnoremap <a-j> :m '>+1<cr>gv=gv
 vnoremap <a-k> :m '<-2<cr>gv=gv
+
+"===============================================================================
+" Plugin settings
+"===============================================================================
+
+" NERDTree
+nnoremap <F2> :NERDTreeToggle<cr>
+nnoremap <leader>nt :NERDTreeToggle<cr>
+nnoremap <leader>nf :NERDTreeFind<cr>
+
+let NERDTreeIgnore=['\~$', '\.so', '\.swo$', '\.swp$', '\.pyc', '__pycache__']
+let NERDTreeShowBookmarks=1
+let NERDTreeShowHidden=1
 
 "===============================================================================
 " Spelling
