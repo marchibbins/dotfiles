@@ -12,7 +12,7 @@ call plug#begin()
 Plug 'chriskempson/base16-vim'
 
 " IDE features
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 
 call plug#end()
 
@@ -294,6 +294,7 @@ nnoremap <F2> :NERDTreeToggle<cr>
 nnoremap <leader>nt :NERDTreeToggle<cr>
 nnoremap <leader>nf :NERDTreeFind<cr>
 
+let NERDTreeChDirMode=2
 let NERDTreeIgnore=['\~$', '\.so', '\.swo$', '\.swp$', '\.pyc', '__pycache__']
 let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1
