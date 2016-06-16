@@ -202,6 +202,9 @@ cnoremap w!! w !sudo tee % >/dev/null
 " d: Delete into the blackhole
 nnoremap d "_d
 
+" dd: Yank single line
+nnoremap dd dd
+
 " c: Change into the blackhole
 nnoremap c "_c
 
