@@ -13,6 +13,8 @@ Plug 'chriskempson/base16-vim'
 
 " IDE features
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
@@ -288,6 +290,11 @@ vnoremap <a-k> :m '<-2<cr>gv=gv
 "===============================================================================
 " Plugin settings
 "===============================================================================
+
+" Airline
+let g:airline_powerline_fonts = 1
+let g:airline_section_c = airline#section#create_left(['%{getcwd()}', 'file'])
+let g:airline_theme = 'base16'
 
 " NERDTree
 nnoremap <F2> :NERDTreeToggle<cr>
