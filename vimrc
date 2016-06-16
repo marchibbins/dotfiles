@@ -8,6 +8,9 @@ set nocompatible " be iMproved
 
 call plug#begin()
 
+" Colour
+Plug 'chriskempson/base16-vim'
+
 " IDE features
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
@@ -35,6 +38,11 @@ set encoding=utf-8
 
 " 256bit terminal
 set t_Co=256
+
+" Colour
+let base16colorspace=256
+set background=dark
+colorscheme base16-default
 
 " Turn on line number
 set number
