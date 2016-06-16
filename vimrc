@@ -68,10 +68,10 @@ set history=10000
 set autoread
 
 " Minimal number of screen lines to keep above and below the cursor
-set scrolloff=10
+set scrolloff=5
 
 " How many lines to scroll at a time, make scrolling appears faster
-set scrolljump=3
+set scrolljump=1
 
 " Min width of the number column to the left
 set numberwidth=4
