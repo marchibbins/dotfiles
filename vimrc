@@ -11,13 +11,17 @@ call plug#begin()
 " Colour
 Plug 'chriskempson/base16-vim'
 
-" IDE features
-Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
-Plug 'scrooloose/nerdcommenter'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Movement
 Plug 'easymotion/vim-easymotion'
 Plug 'rhysd/clever-f.vim'
+
+" Navigation
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
+Plug 'scrooloose/nerdcommenter'
+
+" Status
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
