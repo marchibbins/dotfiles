@@ -55,6 +55,7 @@ colorscheme base16-default
 
 " Turn on line number
 set number
+set relativenumber
 
 " Turn on ruler
 set ruler
