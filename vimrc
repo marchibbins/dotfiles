@@ -55,7 +55,9 @@ colorscheme base16-default
 
 " Turn on line number
 set number
-set relativenumber
+if exists('+relativenumber')
+    set relativenumber
+endif
 
 " Turn on ruler
 set ruler
@@ -132,7 +134,9 @@ set laststatus=2
 set cmdheight=2
 
 " Column width indicator
-set colorcolumn=80
+if exists('+colorcolumn')
+    set colorcolumn=80
+endif
 
 " Tab settings
 set expandtab
