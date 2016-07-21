@@ -20,6 +20,9 @@
 # Node
 node_modules
 
+# Vagrant
+.vagrant
+
 # OS X
 .DS_Store
 .Spotlight-V100
