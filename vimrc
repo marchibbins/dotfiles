@@ -96,7 +96,7 @@ set completeopt=longest,menuone
 
 " Wild menu
 set wildmode=list:longest,full
-set wildmenu "turn on wild menu
+set wildmenu
 set wildignore=*~,*.o,*.obj,.git
 set wildignore+=*.so,*.swo,*.swp,*.pyc,__pycache__
 set wildignore+=*.db,*.sqlite,*/logs/*,*/tmp/*,*.zip
@@ -167,8 +167,8 @@ noremap! <right> <esc>
 "==============================================================================
 
 " Map leader and localleader key to comma
-let mapleader=","
-let g:mapleader=","
+let mapleader=','
+let g:mapleader=','
 
 " Fast saving and quitting
 nmap <leader>w :w!<cr>
@@ -221,7 +221,7 @@ nnoremap dd dd
 nnoremap c "_c
 
 "===============================================================================
-"" Visual node key mappings
+" Visual node key mappings
 "===============================================================================
 
 " d: Delete into the blackhole
@@ -322,10 +322,11 @@ let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1
 
 "===============================================================================
-" Spelling
+" Functions
 "===============================================================================
 
-if !has("gui_running")
+" Spelling
+if !has('gui_running')
     hi clear SpellBad
     hi SpellBad cterm=underline ctermfg=red
     hi clear SpellCap
