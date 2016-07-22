@@ -23,6 +23,10 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" Code
+Plug 'SirVer/ultisnips', { 'on': [] }
+Plug 'honza/vim-snippets'
+
 call plug#end()
 
 " Enable filetype plugins
@@ -321,6 +325,12 @@ let NERDTreeIgnore=['\~$', '\.so', '\.swo$', '\.swp$', '\.pyc', '__pycache__']
 let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1
 
+" UltiSnips
+let g:UltiSnipsExpandTrigger='<tab>'
+let g:UltiSnipsListSnippets='<s-tab>'
+let g:UltiSnipsJumpForwardTrigger='<c-j>'
+let g:UltiSnipsJumpBackwardTrigger='<c-s-k>'
+
 "===============================================================================
 " Functions
 "===============================================================================
@@ -339,3 +349,11 @@ endif
 
 " Toggle spell checking
 nnoremap <F5> :setlocal spell! spelllang=en_gb<cr>
+
+" Load UltiSnips lazily
+" https://github.com/junegunn/vim-plug/wiki/faq#loading-plugins-manually
+augroup load_us_ycm
+    autocmd!
+    autocmd InsertEnter * call plug#load('ultisnips')
+         \| autocmd! load_us_ycm
+augroup END
