@@ -55,7 +55,7 @@ set t_Co=256
 " Colour
 let base16colorspace=256
 set background=dark
-colorscheme base16-default
+colorscheme base16-default-dark
 
 " Turn on line number
 set number
