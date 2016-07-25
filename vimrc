@@ -24,6 +24,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " Code
+Plug 'ervandew/supertab'
+Plug 'Valloric/YouCompleteMe', { 'on': [] }
 Plug 'SirVer/ultisnips', { 'on': [] }
 Plug 'honza/vim-snippets'
 
@@ -325,11 +327,16 @@ let NERDTreeIgnore=['\~$', '\.so', '\.swo$', '\.swp$', '\.pyc', '__pycache__']
 let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1
 
+" Supertab
+let g:ycm_key_list_select_completion=['<C-n>']
+let g:ycm_key_list_previous_completion=['<C-p>']
+let g:SuperTabDefaultCompletionType='<C-n>'
+
 " UltiSnips
-let g:UltiSnipsExpandTrigger='<tab>'
-let g:UltiSnipsListSnippets='<s-tab>'
-let g:UltiSnipsJumpForwardTrigger='<c-j>'
-let g:UltiSnipsJumpBackwardTrigger='<c-s-k>'
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
 
 "===============================================================================
 " Functions
@@ -354,6 +361,6 @@ nnoremap <F5> :setlocal spell! spelllang=en_gb<cr>
 " https://github.com/junegunn/vim-plug/wiki/faq#loading-plugins-manually
 augroup load_us_ycm
     autocmd!
-    autocmd InsertEnter * call plug#load('ultisnips')
+    autocmd InsertEnter * call plug#load('ultisnips', 'YouCompleteMe')
          \| autocmd! load_us_ycm
 augroup END
