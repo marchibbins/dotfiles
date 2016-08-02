@@ -29,6 +29,8 @@ Plug 'Valloric/YouCompleteMe', { 'on': [] }
 Plug 'SirVer/ultisnips', { 'on': [] }
 Plug 'honza/vim-snippets'
 
+Plug 'tpope/vim-fugitive'
+
 call plug#end()
 
 " Enable filetype plugins
