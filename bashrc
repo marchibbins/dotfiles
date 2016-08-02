@@ -96,6 +96,12 @@ cdmkdir () {
     mkdir -p "$@" && cd "$@";
 }
 
+# Create new tmux session using dir name
+tmuxn () {
+  tmux new-session -As `basename $PWD`
+}
+
+
 # ------------------------------------------
 # Prompt - credit to @jsummerfield
 # ------------------------------------------
