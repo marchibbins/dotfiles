@@ -332,6 +332,7 @@ nnoremap <leader>nf :NERDTreeFind<cr>
 
 let NERDTreeChDirMode=2
 let NERDTreeIgnore=['\~$', '\.so', '\.swo$', '\.swp$', '\.pyc', '__pycache__']
+let NERDTreeIgnore+=['node_modules']
 let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1
 
