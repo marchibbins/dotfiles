@@ -136,9 +136,8 @@ if [ -d /usr/local/bin/google_appengine ]; then
 fi
 
 # NVM
-if [ -x ~/.nvm/nvm.sh ]; then
-    source ~/.nvm/nvm.sh
-fi
+export NVM_DIR="/home/marc/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 # Heroku
 export PATH="/usr/local/heroku/bin:$PATH"
