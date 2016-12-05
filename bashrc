@@ -98,22 +98,10 @@ tmuxn () {
 }
 
 
-# ------------------------------------------
 # Prompt - credit to @jsummerfield
-# ------------------------------------------
-
-parse_virtualenv() {
-    if [ -n "$VIRTUAL_ENV" ] ; then
-        basename $VIRTUAL_ENV | sed -e 's/\(.*\)/(\1) /'
-    fi
-}
-
-parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
-}
-
-export VIRTUAL_ENV_DISABLE_PROMPT=1
-export PS1="\n\$(parse_virtualenv)\e[0;33m\$(parse_git_branch)\e[m\h \e[0;32m\w\e[m\n\$ "
+if [ -f ~/.bash_prompt ]; then
+    source ~/.bash_prompt
+fi
 
 # ------------------------------------------
 # Environment
