@@ -8,6 +8,7 @@
        BLUE="\[\033[1;34m\]"
   LIGHT_RED="\[\033[1;31m\]"
 LIGHT_GREEN="\[\033[1;32m\]"
+ LIGHT_CYAN="\[\033[1;96m\]"
       WHITE="\[\033[1;37m\]"
  LIGHT_GRAY="\[\033[0;37m\]"
  COLOR_NONE="\[\e[0m\]"
@@ -28,11 +29,11 @@ function set_git_branch {
   elif [[ ${git_status} =~ "Changes to be committed" ]]; then
     state="${YELLOW}"
   else
-    state="${LIGHT_RED}"
+    state="${LIGHT_CYAN}"
   fi
 
   # Set arrow icon based on status against remote
-  remote_pattern="# Your branch is (ahead|behind)+ "
+  remote_pattern="Your branch is (ahead|behind)+ "
   if [[ ${git_status} =~ ${remote_pattern} ]]; then
     if [[ ${BASH_REMATCH[1]} == "ahead" ]]; then
       remote="↑"
@@ -42,7 +43,7 @@ function set_git_branch {
   else
     remote=""
   fi
-  diverge_pattern="# Your branch and (.*) have diverged"
+  diverge_pattern="Your branch and (.*) have diverged"
   if [[ ${git_status} =~ ${diverge_pattern} ]]; then
     remote="↕"
   fi
