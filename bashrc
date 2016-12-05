@@ -107,24 +107,6 @@ fi
 # Environment
 # ------------------------------------------
 
-# Virtualenvwrapper
-if [ -x /usr/local/bin/virtualenvwrapper.sh ]; then
-    export WORKON_HOME=$HOME/.virtualenvs
-    export PROJECT_HOME=$HOME/Projects
-    source /usr/local/bin/virtualenvwrapper.sh
-fi
-
-# Google App Engine
-if [ -d /usr/local/bin/google_appengine ]; then
-    export PATH=$PATH:/usr/local/bin/google_appengine/
-fi
-
 # NVM
 export NVM_DIR="/home/marc/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-
-# Heroku
-export PATH="/usr/local/heroku/bin:$PATH"
-
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
