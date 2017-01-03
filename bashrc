@@ -77,6 +77,7 @@ alias gb='git branch'
 alias gl='git log'
 alias gls='git ls'
 alias glast='git last'
+alias gwho='git ls-files | while read f; do git blame --line-porcelain $f | grep "^author "; done | sort -f | uniq -ic | sort -n'
 
 # Python
 alias pym='python manage.py'
