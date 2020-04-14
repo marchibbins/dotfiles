@@ -2,7 +2,7 @@
 
 [user]
     name = Marc Hibbins
-    email = marchibbins@gmail.com
+    email
 [core]
     autocrlf = input
     editor = /usr/bin/vim
